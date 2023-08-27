@@ -1,0 +1,9 @@
+services:
+  myapp:
+    image: openjdk:17   # L'image Docker pour Java 11
+    ports:
+      - "8080:8080"      # Mappage du port du conteneur vers le port de l'hôte
+    volumes:
+      - ./build/libs:/app
+    working_dir: /app    # Répertoire de travail dans le conteneur
+    command: java -jar Tennis-0.0.1-SNAPSHOT.jar   # Commande pour exécuter votre application Java
